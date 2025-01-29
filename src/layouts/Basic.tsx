@@ -1,6 +1,7 @@
 import { Box, Theme, useTheme } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import { createStyles } from "@mui/styles";
+import Header from "../component/header";
 
 const useStyle = (theme: Theme) => createStyles({
   root: {
@@ -21,6 +22,7 @@ const Basic = () => {
   const styles = useStyle(theme);
   return (
     <Box sx={styles.root}>
+      <Header />
    <Outlet />
       
     </Box>
