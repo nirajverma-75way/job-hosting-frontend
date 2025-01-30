@@ -64,74 +64,77 @@ export default function Company() {
   ];
   return (
     <Container>
-        <MotionBlock>
-            <Box component="section" sx={{ placeItems: "center", padding: "60px" }}>
-        <Box sx={{ display: "flex", gap: "20px", padding: "10px 0" }}>
-          <Typography component="h2" variant="h3">
-            Find Your
+      <MotionBlock>
+        <Box component="section" sx={{ placeItems: "center", padding: "60px 0" }}>
+          <Box sx={{ display: "flex", padding: "10px 0", flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
+            <Typography component="h2" variant="h4">
+              Find Your
+            </Typography>
+            <Box>
+            <Typography component="h2" sx={{ color: "#26A4FF" }} variant="h4">
+              {" "}
+              dream Companies
+        
+            </Typography>  <img
+            src="/public/DreamLine.svg"
+            width="20rem"
+          />
+            </Box>
+          </Box>
+          <Typography py={2} fontWeight={500}>
+            Find dream companies, you dream work for
           </Typography>
-          <Typography component="h2" sx={{ color: "#26A4FF" }} variant="h3">
-            {" "}
-            dream Companies
+          <SearchBox />
+
+          <Typography
+            fontWeight={300}
+            sx={{ margin: "10px 0", justifySelf: "left" }}
+          >
+            Popular : Twitter, Microsoft, Apple, Facebook
           </Typography>
         </Box>
-        <img
-          style={{
-            float: "right",
-            position: "relative",
-            top: "-0.6rem",
-            right: "13rem",
-            width: "25rem"
-          }}
-          src="/public/DreamLine.svg"
-        />
-        <Typography py={2} fontWeight={500}>
-          Find dream companies, you dream work for
-        </Typography>
-        <SearchBox />
+      </MotionBlock>
 
-        <Typography
-          fontWeight={300}
-          sx={{ margin: "10px 0", justifySelf: "left" }}
-        >
-          Popular : Twitter, Microsoft, Apple, Facebook
-        </Typography>
-      </Box>
-        </MotionBlock>
-      
-          <MotionBlock>
-            <Box sx={{marginTop: "10rem"}}>
-        <Typography variant="h4" fontWeight={500}>
-          Recomanded Companies
-        </Typography>
-        <Typography fontWeight={300}>
-          Based on your profile, company preferences, and recent activity
-        </Typography>
+      <MotionBlock>
+        <Box sx={{ marginTop: "10rem" }}>
+          <Typography variant="h4" fontWeight={500}>
+            Recomanded Companies
+          </Typography>
+          <Typography fontWeight={300}>
+            Based on your profile, company preferences, and recent activity
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              placeContent: "center",
+              padding: "30px 0",
+              justifyContent: "space-evenly",
+              gap: "2rem",
+            }}
+          >
+            {recomandedCompanies.map((data, index) => (
+              <ComponeyCard data={data} key={index} />
+            ))}
+          </Box>
+        </Box>
+      </MotionBlock>
+
+      <PostingPamplete />
+      <MotionBlock>
         <Box
           sx={{
             display: "flex",
             flexWrap: "wrap",
-            padding: "30px 0",
             justifyContent: "space-between",
-            gap: "2rem",
+            gap: "15px",
           }}
         >
           {recomandedCompanies.map((data, index) => (
-            <ComponeyCard data={data} key={index} />
+            <CompanyList data={data} key={index} />
           ))}
         </Box>
-      </Box>
-          </MotionBlock>
-      
-      <PostingPamplete />
-      <MotionBlock>
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: "15px" }}>
-        {recomandedCompanies.map((data, index) => (
-          <CompanyList data={data} key={index} />
-        ))}
-      </Box>
       </MotionBlock>
-      
     </Container>
   );
 }

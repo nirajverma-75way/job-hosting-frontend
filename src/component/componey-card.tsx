@@ -10,7 +10,9 @@ import {
 
 export default function ComponeyCard({ data }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{ width: { xs: "15rem", sm: "17rem", md: "25rem", lg: "22rem" } }}
+    >
       <CardContent>
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <CardMedia
